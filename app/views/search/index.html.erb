@@ -1,7 +1,9 @@
 <div class="my-6">
   <%= turbo_frame_tag "search_results" do %>
-    <% @results.each do |result| %>
-      <%= render(CharacterComponent.new(name: @result.name, description: @result.description)) %>
+    <% if @results.any? %>
+      <% @results.each do |result| %>
+        <%= render(CharacterComponent.new(name: result.name, description: result.description)) %>
+      <% end %>
     <% end %>
   <% end %>
 </div>

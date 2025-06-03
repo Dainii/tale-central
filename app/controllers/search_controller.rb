@@ -3,7 +3,7 @@ class SearchController < ApplicationController
     if params[:query].present?
       @results = Character.search(params[:query])
     else
-      @results = Character.all
+      @results = []
     end
   end
 end
